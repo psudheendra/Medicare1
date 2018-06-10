@@ -1,0 +1,33 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'">
+    <!-- [opened]="!(isHandset$ | async)" -->
+    <mat-toolbar color="primary">Horizon </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Search</a>
+      <a mat-list-item href="#">CMS Communications</a>
+      <a mat-list-item href="#">Action Items</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <!-- *ngIf="isHandset$ | async" -->
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Medicare</span>
+      <!-- This fills the remaining space of the current row -->
+      <span class="example-fill-remaining-space"></span>
+      <button mat-button>About</button>
+      <button mat-button>CMS Communications</button>
+      <!-- <button mat-button>User Name</button> -->
+      <button mat-button [matMenuTriggerFor]="menu">Venkatesh</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>My Site</button>
+        <button mat-menu-item>My Profile</button>
+        <button mat-menu-item>My Settings</button>
+      </mat-menu>
+      <!-- <span>Right Aligned Text</span> -->
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
