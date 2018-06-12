@@ -18,7 +18,7 @@
       <span>Medicare</span>
       <!-- This fills the remaining space of the current row -->
       <span class="example-fill-remaining-space"></span>
-      <button mat-button>About</button>
+      <button mat-button (click)="openAbout()">About</button>
       <button mat-button>CMS Communications</button>
       <!-- <button mat-button>User Name</button> -->
       <button mat-button [matMenuTriggerFor]="menu">Venkatesh</button>
@@ -29,5 +29,7 @@
       </mat-menu>
       <!-- <span>Right Aligned Text</span> -->
     </mat-toolbar>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
+  
 </mat-sidenav-container>
